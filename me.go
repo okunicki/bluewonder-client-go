@@ -14,7 +14,7 @@ type MeResponse struct {
 	Groups []string `json:"groups"`
 }
 
-func (c *Client) getMe() (*MeResponse, error) {
+func (c *Client) GetMe() (*MeResponse, error) {
 	req, err := http.NewRequest("GET", MeUrl, nil)
 	if err != nil {
 		return nil, err
@@ -34,7 +34,7 @@ func (c *Client) getMe() (*MeResponse, error) {
 	return &me, nil
 }
 
-func (c *Client) updateMe(updatedMe *MeResponse) error {
+func (c *Client) UpdateMe(updatedMe *MeResponse) error {
 	j, err := json.Marshal(updatedMe)
 	if err != nil {
 		return err
