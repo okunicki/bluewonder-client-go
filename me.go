@@ -20,7 +20,7 @@ func (c *Client) GetMe() (*MeResponse, error) {
 		return nil, err
 	}
 
-	res, err := c.doRequest(req)
+	res, err := c.DoRequest(req)
 	if err != nil {
 		return nil, err
 	}
@@ -47,7 +47,7 @@ func (c *Client) UpdateMe(updatedMe *MeResponse) error {
 
 	req.Header.Set("Content-Type", "application/json")
 
-	_, err = c.doRequest(req)
+	_, err = c.DoRequest(req)
 	if err != nil {
 		return err
 	}

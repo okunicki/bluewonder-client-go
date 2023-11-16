@@ -22,7 +22,7 @@ func NewClient(apiKey string) *Client {
 	}
 }
 
-func (c *Client) newRequest(path string) (*http.Request, error) {
+func (c *Client) NewRequest(path string) (*http.Request, error) {
 	req, err := http.NewRequest("GET", fmt.Sprintf("%s/%s", DefaultRestUrl, path), nil)
 	if err != nil {
 		return nil, err
@@ -31,7 +31,7 @@ func (c *Client) newRequest(path string) (*http.Request, error) {
 	return req, nil
 }
 
-func (c *Client) doRequest(req *http.Request) ([]byte, error) {
+func (c *Client) DoRequest(req *http.Request) ([]byte, error) {
 	req.Header.Set("Authorization", fmt.Sprintf("Bearer %s", c.ApiKey))
 	res, err := c.HttpClient.Do(req)
 	if err != nil {
