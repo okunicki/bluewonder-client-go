@@ -1,7 +1,0 @@
-provider_installation {
-  dev_overrides {
-    "my-org/bluewonder" = "C:\\Users\\okunicki\\OneDrive - Objectivity Sp. z o.o\\Dokumenty\\GitRepo\\BY\\client\\bluewonder"
-  }
-
-  direct {}
-}
